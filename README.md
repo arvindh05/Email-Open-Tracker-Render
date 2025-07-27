@@ -100,6 +100,37 @@ This repo includes two main scripts:
    EMAIL_PASSWORD = "your-app-password"
    ```
 
+# Email-Open-Tracker-Render
+
+Email-Open-Tracker is a **Flask-based app** for tracking email opens via a **1×1 transparent pixel**.  
+It logs timestamp, IP, location, and user agent for every open, saving it to CSV and providing endpoints for JSON and CSV export.
+
+---
+
+## Sample Outputs
+
+### 1. Tracked Email (HTML View)
+![Tracked Email](images/Example_of_sending_email.png)  
+_Example of an email sent with an invisible tracking pixel (1×1 image)._
+
+---
+
+### 2. Viewing Logs as JSON
+![View Logs JSON](images/Render_view_logs_page_output.png)  
+_The `/view_logs/<email_id>` endpoint shows logs in JSON format._
+
+---
+
+### 3. Downloading Logs as CSV
+![CSV Logs](images/Render_download_logs_output.png)  
+_The `/download_logs` endpoint downloads all open events as a CSV file with headers._
+
+---
+
+## (Rest of README...)
+
+
+
 2. Send a tracked email:
 
    ```bash
