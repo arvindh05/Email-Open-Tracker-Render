@@ -37,7 +37,7 @@ This repo includes two main scripts:
    ````python
    EMAIL_ADDRESS = "your-email@gmail.com"
    EMAIL_PASSWORD = "abcd efgh ijkl mnop"
-````
+
 
 4. **(Optional) Use Environment Variables**
    For security:
