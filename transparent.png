@@ -1,0 +1,4 @@
+import base64
+pixel = b'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=='
+with open('transparent.png', 'wb') as f:
+    f.write(base64.b64decode(pixel))
