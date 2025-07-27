@@ -1,11 +1,13 @@
 # Test 6
 
-from flask import Flask, request, send_file, jsonify, Response
-from datetime import datetime, timezone
-import os
-import csv
-import requests
+# Import required libraries
+from flask import Flask, request, send_file, jsonify, Response  # Flask for web server and API routes
+from datetime import datetime, timezone  # For timestamping log entries
+import os  # File system operations (checking if files exist)
+import csv  # Writing logs to a CSV file
+import requests  # To fetch geolocation info (city, region, country) based on IP
 
+# Initializing Flask app
 app = Flask(__name__)
 
 # Paths
@@ -61,6 +63,7 @@ def track_open(email_id):
 
     return send_file('transparent.png', mimetype='image/png')
 
+# Route to view logs for a specific email ID (returns JSON)
 @app.route('/view_logs/<email_id>')
 def view_logs(email_id):
     results = []
@@ -75,7 +78,7 @@ def view_logs(email_id):
     })
 
 
-# Download all logs as CSV
+# Route to Download all logs as CSV
 @app.route('/download_logs')
 def download_logs():
     if not os.path.exists(CSV_FILE):
@@ -89,7 +92,7 @@ def download_logs():
         mimetype="text/csv",
         headers={"Content-Disposition": "attachment;filename=open_logs.csv"}
     )
-
+# Start the Flask app when the script is executed
 if __name__ == '__main__':
     init_csv()
     port = int(os.environ.get('PORT', 5000))
