@@ -61,16 +61,6 @@ def track_open(email_id):
 
     return send_file('transparent.png', mimetype='image/png')
 
-# View logs (JSON)
-# @app.route('/view_logs/<email_id>')
-# def view_logs(email_id):
-#     results = [dict(zip(CSV_HEADERS, row)) for row in open_logs if row[0] == email_id]
-#     return jsonify({
-#         "email_id": email_id,
-#         "open_count": len(results),
-#         "events": results
-#     })
-
 @app.route('/view_logs/<email_id>')
 def view_logs(email_id):
     results = []
